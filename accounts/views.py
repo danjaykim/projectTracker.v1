@@ -49,15 +49,15 @@ def signup(request):
             password = form.cleaned_data["password"]
             password_confirmation = form.cleaned_data["password_confirmation"]
 
-        if password == password_confirmation:
-            user = User.objects.create_user(
-                username=username,
-                password=password,
-            )
-            login(request, user)
-            return redirect("list_projects")
-        else:
-            form.add_error("password", "the passwords do not match")
+            if password == password_confirmation:
+                user = User.objects.create_user(
+                    username=username,
+                    password=password,
+                )
+                login(request, user)
+                return redirect("list_projects")
+            else:
+                form.add_error("password", "the passwords do not match")
 
     elif request.method == "GET":
         form = SignUpForm()
