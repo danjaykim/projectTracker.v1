@@ -4,14 +4,14 @@
     Create a project
 {% endblock title %}
 {% block content %}
-    <main>
-        <div>
-            <h1>Create a new project</h1>
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button>Create</button>
-            </form>
-        </div>
-    </main>
+    <div>
+        <h1>Create a new project</h1>
+        <form method="post" class="form">
+            {% csrf_token %}
+            <div class="form-wrap">{{ form.as_p }}</div>
+            <div class="form-button-wrap">
+                <button class="form-button">CREATE</button>
+            </div>
+        </form>
+    </div>
 {% endblock content %}

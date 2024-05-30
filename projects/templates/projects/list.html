@@ -4,34 +4,32 @@
     My Projects
 {% endblock title %}
 {% block content %}
-    <main>
-        <div>
-            <h1>My Projects</h1>
-            <p>
-                <a href="{% url 'create_project' %}">Create a new project</a>
-            </p>
-            {% if project_list|length == 0 %}
-                <p>You are not assigned to any projects</p>
-            {% else %}
-                <table>
-                    <thead>
+    <div>
+        <h1>My Projects</h1>
+        <p class="create-project-wrap">
+            <a class="button" href="{% url 'create_project' %}">CREATE A NEW PROJECT</a>
+        </p>
+        {% if project_list|length == 0 %}
+            <p>You are not assigned to any projects</p>
+        {% else %}
+            <table class="list-table">
+                <thead class="thead-list">
+                    <tr>
+                        <th>Name</th>
+                        <th>Number of tasks</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-list">
+                    {% for project in project_list %}
                         <tr>
-                            <th>Name</th>
-                            <th>Number of tasks</th>
+                            <td>
+                                <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
+                            </td>
+                            <td>{{ project.tasks.all|length }}</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        {% for project in project_list %}
-                            <tr>
-                                <td>
-                                    <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
-                                </td>
-                                <td>{{ project.tasks.all|length }}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            {% endif %}
-        </div>
-    </main>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
 {% endblock content %}

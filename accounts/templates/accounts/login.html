@@ -4,14 +4,14 @@
     Login
 {% endblock title %}
 {% block content %}
-    <main>
-        <div>
-            <h1>Login</h1>
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button>Login</button>
-            </form>
-        </div>
-    </main>
+    <div>
+        <h1>Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-wrap">{{ form.as_p }}</div>
+            <div class="form-button-wrap">
+                <button class="form-button">LOGIN</button>
+            </div>
+        </form>
+    </div>
 {% endblock content %}

@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    max-width: 1400px;
+    margin: auto;
+    background-color: rgb(40, 50, 64);
+    color: white;
+}
+
+header {
+    margin: 2rem 0;
+}
+
+.container,
+.main-container {
+    padding: 1.5rem;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #FFD6BA;
+    max-width: 95%;
+    margin: auto;
+    border-radius: 20px;
+    background: rgb(36, 37, 47);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+a:hover,
+.create-button:hover {
+    color: darkgray;
+    transition: .5s all ease-out;
+    border-bottom: 1px solid white;
+}
+
+p,
+table,
+td a,
+.create-project-link {
+    font-size: 1.1rem;
+    font-family: "Radio Canada Big", sans-serif;
+    color: lightgray;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav ul li {
+    font-family: "Major Mono Display", monospace;
+    font-size: 1.1rem;
+}
+
+nav ul li a {
+    border-top: 1px solid lightgray;
+    padding: .3rem 0;
+    color: #FFD6BA;
+}
+
+nav ul li a:hover {
+    border-top: none;
+}
+
+h1 {
+    font-family: "DM Serif Display", serif;
+    /* font-family: "Permanent Marker", cursive; */
+    font-size: 3.5rem;
+    color: #f2e9e4;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.create-project-wrap {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.button {
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 1rem 3rem;
+    font-size: .8rem;
+    font-family: "Chakra Petch", sans-serif;
+    letter-spacing: 2px;
+}
+
+.button:hover,
+.form-button:hover {
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    background: rgb(52, 68, 92);
+    transition: .5s;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: "DM Serif Display", serif;
+}
+
+.detail-p {
+    font-family: "Radio Canada Big", sans-serif;
+    margin-bottom: 1rem;
+}
+
+.detail-link-wrap {
+    margin-bottom: 3rem;
+    padding: 1rem;
+}
+
+th {
+    padding-bottom: .5rem;
+
+}
+
+td {
+    padding: 2px 10px;
+}
+
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.form-button-wrap {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.form-button {
+    cursor: pointer;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font-size: .8rem;
+    font-family: "Chakra Petch", sans-serif;
+    color: white;
+    background: rgb(36, 37, 47);
+    border: 2px solid white;
+    letter-spacing: 1px;
+}
+
+
+.logo {
+    padding: 1.5rem 0 2rem;
+    display: flex;
+    justify-content: center;
+}

@@ -5,6 +5,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Serif+Display:ital@0;1&family=Major+Mono+Display&family=Permanent+Marker&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+              rel="stylesheet">
+        <script src="https://kit.fontawesome.com/4a252ecb73.js"
+                crossorigin="anonymous"></script>
         <title>
             {% block title %}
             {% endblock title %}
@@ -12,30 +19,42 @@
     </head>
     <body>
         <header>
-            <nav>
-                <ul>
-                    {% if user.is_authenticated %}
-                        <li>
-                            <a href="{% url 'show_my_tasks' %}">My tasks</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'list_projects' %}">My projects</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'logout' %}">Logout</a>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{% url 'login' %}">Login</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'signup' %}">Signup</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </nav>
+            <div class="logo">
+                {% comment %} <i class="fa-brands fa-cloudversify fa-2xl"></i> {% endcomment %}
+                {% comment %} <i class="fa-brands fa-rebel fa-2xl" style="color: #63E6BE;"></i> {% endcomment %}
+                {% comment %} <i class="fa-solid fa-feather fa-2xl" style="color: #63E6BE;"></i> {% endcomment %}
+                <i class="fa-solid fa-kiwi-bird fa-2xl" style="color: #63E6BE;"></i>
+            </div>
+            <div class="container">
+                <nav>
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <li>
+                                <a href="{% url 'show_my_tasks' %}">My tasks</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'list_projects' %}">My projects</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{% url 'login' %}">Login</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'signup' %}">Signup</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
         </header>
-        {% block content %}
-        {% endblock content %}
+        <main>
+            <div class="main-container">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </main>
     </body>
 </html>
