@@ -34,7 +34,7 @@
     </div>
 {% endblock content %}
 {% block section %}
-    <div class="main-container second-container">
+    <div class="main-container">
         <div>
             <h2 class="notes-h2">My Notes / Reminders</h2>
             <p class="create-project-wrap">
@@ -43,12 +43,14 @@
             {% if notes.count == 0 %}
                 <p>No notes currently</p>
             {% else %}
-                <p class="notes-title">Notes</p>
-                {% for note in notes %}
-                    <p class="notes-p">
-                        <a href="{% url 'note_detail' note.id %}">{{ note.title }}</a>
-                    </p>
-                {% endfor %}
+                <div class="grid-container">
+                    <p class="notes-title">Notes</p>
+                    {% for note in notes %}
+                        <p class="notes-p">
+                            <a href="{% url 'note_detail' note.id %}">{{ note.title }}</a>
+                        </p>
+                    {% endfor %}
+                </div>
             {% endif %}
         </div>
     </div>

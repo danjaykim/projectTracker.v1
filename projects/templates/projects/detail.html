@@ -7,10 +7,15 @@
     <div>
         <h1>{{ project.name }}</h1>
         <p class="detail-p">{{ project.description }}</p>
+        <div class="project-edit-create-wrap">
+            <p class="detail-link-wrap">
+                <a class="button" href="{% url 'edit_project' project.id %}">EDIT THIS PROJECT</a>
+            </p>
+            <p class="detail-link-wrap">
+                <a class="button" href="{% url 'create_task' %}">CREATE A NEW TASK</a>
+            </p>
+        </div>
         <h2>Tasks</h2>
-        <p class="detail-link-wrap">
-            <a class="button" href="{% url 'create_task' %}">CREATE A NEW TASK</a>
-        </p>
         {% if project.tasks.count > 0 %}
             <table>
                 <thead>

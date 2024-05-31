@@ -54,25 +54,22 @@ def project_create(request):
     return render(request, "projects/create.html", context)
 
 
-# =============== New Features =======================
+# views for editing a project:
+@login_required
+def project_edit(request, id):
+    edit = get_object_or_404(Project, id=id)
 
+    if request.method == "POST":
+        form = ProjectForm(request.POST, instance=edit)
+        if form.is_valid():
+            form.save()
+            return redirect("show_project", id=edit.id)
 
-# # views for creating a new note:
-# @login_required
-# def note_create(request):
-#     if request.method == "POST":
-#         form = ProjectNoteForm(request.POST)
-#         if form.is_valid():
-#             note_form = form.save(commit=False)
-#             note_form.owner = request.user
-#             note_form.save()
-#             return redirect("list_projects")
+    elif request.method == "GET":
+        form = ProjectForm(instance=edit)
 
-#     elif request.method == "GET":
-#         form = ProjectNoteForm()
+    context = {
+        "form": form,
+    }
 
-#     context = {
-#         "form": form,
-#     }
-
-#     return render(request, "projects/note.html", context)
+    return render(request, "projects/edit.html", context)
