@@ -4,8 +4,16 @@
     {{ note.title }}
 {% endblock title %}
 {% block content %}
-    <div>
-        <h1>{{ note.title }}</h1>
-        <p class="detail-p">{{ note.description }}</p>
+    <div class="note-container"
+         style="background-color: {{ background_color }}">
+        <div>
+            <div class="project-edit-create-wrap">
+                <p class="detail-link-wrap">
+                    <a class="note-button" href="{% url 'note_edit' note.id %}">edit</a>
+                </p>
+            </div>
+            <h2 class="note-title">{{ note.title }}</h2>
+            <p class="detail-p note-description">{{ note.description }}</p>
+        </div>
     </div>
 {% endblock content %}

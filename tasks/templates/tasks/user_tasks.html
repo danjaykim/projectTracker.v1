@@ -4,31 +4,33 @@
     My Tasks
 {% endblock title %}
 {% block content %}
-    <div>
-        <h1>My Tasks</h1>
-        {% if user_tasks.count > 0 %}
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Start date</th>
-                        <th>Due date</th>
-                        <th>Is completed</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for task in user_tasks %}
+    <div class="main-container">
+        <div>
+            <h1>My Tasks</h1>
+            {% if user_tasks.count > 0 %}
+                <table>
+                    <thead>
                         <tr>
-                            <td>{{ task.name }}</td>
-                            <td>{{ task.start_date }}</td>
-                            <td>{{ task.due_date }}</td>
-                            <td>{{ task.is_completed|yesno }}</td>
+                            <th>Name</th>
+                            <th class="hide-when-view-small">Start date</th>
+                            <th class="hide-when-view-small">Due date</th>
+                            <th>Is completed</th>
                         </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-            <p>You have no tasks</p>
-        {% endif %}
+                    </thead>
+                    <tbody>
+                        {% for task in user_tasks %}
+                            <tr>
+                                <td>{{ task.name }}</td>
+                                <td class="hide-when-view-small">{{ task.start_date }}</td>
+                                <td class="hide-when-view-small">{{ task.due_date }}</td>
+                                <td>{{ task.is_completed|yesno }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>You have no tasks</p>
+            {% endif %}
+        </div>
     </div>
 {% endblock content %}

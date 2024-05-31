@@ -4,54 +4,56 @@
     My Projects
 {% endblock title %}
 {% block content %}
-    <div>
-        <h1>My Projects</h1>
-        <p class="create-project-wrap">
-            <a class="button" href="{% url 'create_project' %}">CREATE A NEW PROJECT</a>
-        </p>
-        {% if project_list|length == 0 %}
-            <p>You are not assigned to any projects</p>
-        {% else %}
-            <table class="list-table">
-                <thead class="thead-list">
-                    <tr>
-                        <th>Name</th>
-                        <th>Number of tasks</th>
-                    </tr>
-                </thead>
-                <tbody class="tbody-list">
-                    {% for project in project_list %}
-                        <tr>
-                            <td>
-                                <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
-                            </td>
-                            <td>{{ project.tasks.all|length }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% endif %}
-    </div>
-{% endblock content %}
-{% block section %}
     <div class="main-container">
         <div>
-            <h2 class="notes-h2">My Notes / Reminders</h2>
+            <h1>My Projects</h1>
             <p class="create-project-wrap">
-                <a class="button" href="{% url 'note_create' %}">CREATE A NEW NOTE</a>
+                <a class="button" href="{% url 'create_project' %}">CREATE A NEW PROJECT</a>
             </p>
-            {% if notes.count == 0 %}
-                <p>No notes currently</p>
+            {% if project_list|length == 0 %}
+                <p>You are not assigned to any projects</p>
             {% else %}
-                <div class="grid-container">
-                    <p class="notes-title">Notes</p>
-                    {% for note in notes %}
-                        <p class="notes-p">
-                            <a href="{% url 'note_detail' note.id %}">{{ note.title }}</a>
-                        </p>
-                    {% endfor %}
-                </div>
+                <table class="list-table">
+                    <thead class="thead-list">
+                        <tr>
+                            <th>Name</th>
+                            <th>Number of tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody-list">
+                        {% for project in project_list %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
+                                </td>
+                                <td>{{ project.tasks.all|length }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             {% endif %}
+        </div>
+    {% endblock content %}
+    {% block section %}
+        <div class="main-container">
+            <div>
+                <h2 class="notes-h2">My Notes / Reminders</h2>
+                <p class="create-project-wrap">
+                    <a class="button" href="{% url 'note_create' %}">CREATE A NEW NOTE</a>
+                </p>
+                {% if notes.count == 0 %}
+                    <p>No notes currently</p>
+                {% else %}
+                    <div class="grid-container">
+                        <p class="notes-title">Notes</p>
+                        {% for note in notes %}
+                            <p class="notes-p">
+                                <a href="{% url 'note_detail' note.id %}">{{ note.title }}</a>
+                            </p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock section %}

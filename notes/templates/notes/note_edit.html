@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Create a project
+    Edit a note
 {% endblock title %}
 {% block content %}
     <div class="main-container">
         <div>
-            <h1>Create a new project</h1>
+            <h1>Edit this note</h1>
             <form method="post" class="form">
                 {% csrf_token %}
                 <div class="form-wrap">{{ form.as_p }}</div>
                 <div class="form-button-wrap">
-                    <button class="form-button">CREATE</button>
+                    <button class="form-button">EDIT</button>
                 </div>
             </form>
         </div>
