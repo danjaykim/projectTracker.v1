@@ -8,5 +8,4 @@ class ProjectForm(ModelForm):
         fields = [
             "name",
             "description",
-            "owner",
         ]

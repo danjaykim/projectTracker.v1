@@ -30,4 +30,5 @@ urlpatterns = [
     path("projects/", include("projects.urls")),
     path("accounts/", include("accounts.urls")),
     path("tasks/", include("tasks.urls")),
+    path("notes/", include("notes.urls")),
 ]

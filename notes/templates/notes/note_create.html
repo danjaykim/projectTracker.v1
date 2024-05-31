@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create a note
+{% endblock title %}
+{% block content %}
+    <div>
+        <h1>Create a new note</h1>
+        <form method="post" class="form">
+            {% csrf_token %}
+            <div class="form-wrap">{{ form.as_p }}</div>
+            <div class="form-button-wrap">
+                <button class="form-button">CREATE</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

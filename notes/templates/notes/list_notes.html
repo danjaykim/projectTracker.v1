@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    My Notes
+{% endblock title %}
+{% block content %}
+    <div>
+        <h1>My Notes</h1>
+        <p class="notes-button-wrap">
+            <a class="button" href="{% url 'note_create' %}">CREATE A NEW NOTE</a>
+        </p>
+        {% if notes|length == 0 %}
+            <p>You have't written any notes yet!</p>
+        {% else %}
+            <table class="list-table">
+                <thead class="thead-list">
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Date Written</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody-list">
+                    {% for note in notes %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'note_detail' note.id %}">{{ note.title }}</a>
+                            </td>
+                            <td>{{ note.description|truncatechars:50 }}</td>
+                            <td>{{ note.date_written|date:"M j, Y" }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock content %}

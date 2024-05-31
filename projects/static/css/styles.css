@@ -30,6 +30,7 @@ header {
     border-radius: 20px;
     background: rgb(36, 37, 47);
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    margin-bottom: 3rem;
 }
 
 a:hover,
@@ -42,6 +43,7 @@ a:hover,
 p,
 table,
 td a,
+p a,
 .create-project-link {
     font-size: 1.1rem;
     font-family: "Radio Canada Big", sans-serif;
@@ -123,7 +125,8 @@ h2 {
 
 th {
     padding-bottom: .5rem;
-
+    color: #FFD6BA;
+    letter-spacing: .5px;
 }
 
 td {
@@ -160,4 +163,47 @@ td {
     padding: 1.5rem 0 2rem;
     display: flex;
     justify-content: center;
+}
+
+
+.notes-button-wrap {
+    padding: 1rem 0 2rem;
+    margin-bottom: 1rem;
+}
+
+.notes-h2 {
+    font-size: 3rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.notes-title {
+    margin: 2rem 0 .5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #FFD6BA;
+}
+
+.notes-p {
+    margin-bottom: .3rem;
+}
+
+
+
+
+/* Media Breakpoints */
+
+@media (width < 600px) {
+
+    .container {
+        margin-top: .5rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        transition: .8s all;
+    }
+
 }

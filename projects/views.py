@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from projects.models import Project
 from projects.forms import ProjectForm
+from notes.models import Note
 
 # Create your views here.
 
@@ -10,9 +11,11 @@ from projects.forms import ProjectForm
 @login_required
 def list_projects(request):
     project_list = Project.objects.filter(owner=request.user)
+    notes = Note.objects.filter(owner=request.user)
 
     context = {
         "project_list": project_list,
+        "notes": notes,
     }
 
     return render(request, "projects/list.html", context)
@@ -49,3 +52,27 @@ def project_create(request):
     }
 
     return render(request, "projects/create.html", context)
+
+
+# =============== New Features =======================
+
+
+# # views for creating a new note:
+# @login_required
+# def note_create(request):
+#     if request.method == "POST":
+#         form = ProjectNoteForm(request.POST)
+#         if form.is_valid():
+#             note_form = form.save(commit=False)
+#             note_form.owner = request.user
+#             note_form.save()
+#             return redirect("list_projects")
+
+#     elif request.method == "GET":
+#         form = ProjectNoteForm()
+
+#     context = {
+#         "form": form,
+#     }
+
+#     return render(request, "projects/note.html", context)

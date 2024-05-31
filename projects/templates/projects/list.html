@@ -33,3 +33,23 @@
         {% endif %}
     </div>
 {% endblock content %}
+{% block section %}
+    <div class="main-container second-container">
+        <div>
+            <h2 class="notes-h2">My Notes / Reminders</h2>
+            <p class="create-project-wrap">
+                <a class="button" href="{% url 'note_create' %}">CREATE A NEW NOTE</a>
+            </p>
+            {% if notes.count == 0 %}
+                <p>No notes currently</p>
+            {% else %}
+                <p class="notes-title">Notes</p>
+                {% for note in notes %}
+                    <p class="notes-p">
+                        <a href="{% url 'note_detail' note.id %}">{{ note.title }}</a>
+                    </p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock section %}
