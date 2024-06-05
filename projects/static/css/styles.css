@@ -250,11 +250,11 @@ td {
 .signup-container {
     background-color: #1d2127;
     padding: 2rem;
-    border: .5px solid lightgray;
-    border-style: double;
+    border: .5px solid #FFD6BA;
     border-radius: 8px;
     text-align: center;
-    width: 400px;
+    width: 500px;
+    max-width: 90%;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
@@ -292,6 +292,31 @@ td {
     }
 } */
 
+.intro-greeting {
+    margin: auto;
+    max-width: 80%;
+}
+
+.intro-greeting-flex {
+    font-family: "Titillium Web", sans-serif;
+    color: #FFD6BA;
+    margin: 1rem 0 2.5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+    letter-spacing: .5px;
+}
+
+.intro-greeting-flex div:last-child {
+    font-size: 1.1rem;
+}
+
+.intro-greeting-flex span {
+    font-weight: 700;
+    color: white;
+}
 
 
 /* Media Breakpoints */
@@ -348,7 +373,7 @@ td {
     .note-container {
         max-width: 400px;
         margin: auto;
-        padding: 3rem;
+        padding: 2.5rem;
         box-shadow: 0 45px 65px rgba(0, 0, 0, 0.50), 0 35px 22px rgba(0, 0, 0, 0.16);
     }
 
@@ -359,6 +384,10 @@ td {
         letter-spacing: 1px;
         color: #FFD6BA;
         grid-column: 1 / 3;
+    }
+
+    .intro-greeting {
+        display: none;
     }
 
 }

@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from projects.models import Project
 from projects.forms import ProjectForm
 from notes.models import Note
+from projects.quotes import motivational_quotes
+import random
 
 # Create your views here.
 
@@ -12,10 +14,12 @@ from notes.models import Note
 def list_projects(request):
     project_list = Project.objects.filter(owner=request.user)
     notes = Note.objects.filter(owner=request.user)
+    random_quote = random.choice(motivational_quotes)
 
     context = {
         "project_list": project_list,
         "notes": notes,
+        "random_quote": random_quote,
     }
 
     return render(request, "projects/list.html", context)

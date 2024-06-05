@@ -4,6 +4,16 @@
     My Projects
 {% endblock title %}
 {% block content %}
+    {% if user.is_authenticated %}
+        <div class="intro-greeting">
+            <div class="intro-greeting-flex">
+                <div>
+                    Welcome, <span>{{ user.username }}</span>! Here are some words to live by today:
+                </div>
+                <div>{{ random_quote }}</div>
+            </div>
+        {% endif %}
+    </div>
     <div class="main-container">
         <div>
             <h1>My Projects</h1>
