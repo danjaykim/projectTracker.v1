@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css2/style.css' %}"
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Serif+Display:ital@0;1&family=Major+Mono+Display&family=Permanent+Marker&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Kalam:wght@300;400;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+                  rel="stylesheet">
+            <script src="https://kit.fontawesome.com/4a252ecb73.js"
+                    crossorigin="anonymous"></script>
+            <title>Homepage</title>
+        </head>
+        <body>
+            <header>
+                <div class="container header-container">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a class="nav-a" href="{% url 'contact_page' %}">Contact</a>
+                            </li>
+                            <li>
+                                <a class="nav-a" href="{% url 'about_page' %}">About</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <i class="fa-solid fa-kiwi-bird fa-2xl" style="color: #63E6BE;"></i>
+                        </div>
+                        <div class="nav-right">
+                            <div>
+                                <a class="nav-a" href="{% url 'login' %}">Login</a>
+                            </div>
+                            <div>
+                                <a class="nav-a" href="{% url 'signup' %}">Sign up</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <div class="container main-container">
+                    {% comment %} <h1 class="h1-project">Project Alpha</h1> {% endcomment %}
+                    <div class="main-flex">
+                        <div class="main-img-wrap">
+                            {% comment %} <img class="main-img"
+      src="https://media.istockphoto.com/id/1356122303/photo/young-man-working-from-home-creative-professional-have-meeting-online.jpg?s=612x612&w=0&k=20&c=_Rl9LQjd81CxR-bIT529IS5fBShp2kjDiFIyFRa8DqY="
+      alt="guy on laptop"> {% endcomment %}
+                            {% comment %} <img class="main-img"
+      src="https://www.nasdaq.com/sites/acquia.prod/files/styles/720x400/public/2022/05/03/technology-stnazkul-adobe.jpeg?h=bec0e58a&itok=mbNYSYDS"
+      alt=""> {% endcomment %}
+                            {% comment %} <img class="main-img"
+      src="https://t4.ftcdn.net/jpg/03/08/69/75/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg"
+      alt=""> {% endcomment %}
+                            <img class="main-img"
+                                 src="https://iimtu.edu.in/blog/wp-content/uploads/2023/11/CSE-aa.jpg"
+                                 alt="">
+                        </div>
+                        <div class="main-p-wrap">
+                            <p>Introducing projectAlpha v1:</p>
+                            <p>
+                                The all-in-one project and task handler made to simplify your life. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos rerum aut mollitia repudiandae beatae qui officiis fugit nulla.
+                            </p>
+                            <div class="button-flex">
+                                <div>
+                                    <a class="button" href="{% url 'signup' %}">SIGNUP</a>
+                                </div>
+                                <div>
+                                    <a class="button" href="{% url 'homepage' %}">LEARN MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <section>
+                <div class="container section-container">
+                    <p>Optimize your Workflow</p>
+                    <div class="section-grid">
+                        <div class="grid">
+                            <div class="section-icon">
+                                <i class="fa-solid fa-laptop-code fa-2xl" style="color: #63E6BE;"></i>
+                            </div>
+                            <h3 class="grid-h3">Adaptive Design</h3>
+                            <p class="grid-p">
+                                Optimize your workflow by Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt doloribus eum provident aut!
+                            </p>
+                        </div>
+                        <div class="grid">
+                            <div class="section-icon">
+                                <i class="fa-solid fa-bolt fa-2xl" style="color: #63E6BE;"></i>
+                            </div>
+                            <h3 class="grid-h3">Lightning Fast</h3>
+                            <p class="grid-p">
+                                Optimize your workflow by Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt doloribus eum provident aut!
+                            </p>
+                        </div>
+                        <div class="grid">
+                            <div class="section-icon">
+                                <i class="fa-solid fa-globe fa-2xl" style="color: #63E6BE;"></i>
+                            </div>
+                            <h3 class="grid-h3">Global Jargon</h3>
+                            <p class="grid-p">
+                                Optimize your workflow by Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt doloribus eum provident aut!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="section2-container">
+                        <div class="section2-flex">
+                            <div class="section2-p-wrap">
+                                <p>Lorem Ipsum Services Provided</p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quod, tenetur dolorum ullam vero eligendi excepturi reiciendis sed minus nisi quidem omnis iusto blanditiis facilis. Distinctio nam necessitatibus sapiente odio! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim mollitia optio, quos sint sunt voluptatem eveniet veniam et id iure porro quas. Ad, ea minima? Eum placeat quisquam!
+                                </p>
+                            </div>
+                            <div class="section2-img-wrap">
+                                <img class="main-img"
+                                     src="https://media.istockphoto.com/id/1356122303/photo/young-man-working-from-home-creative-professional-have-meeting-online.jpg?s=612x612&w=0&k=20&c=_Rl9LQjd81CxR-bIT529IS5fBShp2kjDiFIyFRa8DqY="
+                                     alt="guy on laptop">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer>
+            </footer>
+        </body>
+    </html>

@@ -37,7 +37,7 @@ def user_login(request):
 # views for logging out:
 def user_logout(request):
     logout(request)
-    return redirect("login")
+    return redirect("homepage")
 
 
 # views for sign up:

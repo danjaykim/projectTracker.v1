@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "faces.apps.FacesConfig",
     "notes.apps.NotesConfig",
     "tasks.apps.TasksConfig",
     "projects.apps.ProjectsConfig",

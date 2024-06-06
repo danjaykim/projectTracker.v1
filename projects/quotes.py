@@ -25,7 +25,7 @@ motivational_quotes = [
     "Be miserable. Or motivate yourself. Whatever has to be done.",
     "Only I can change my life. No one can do it for me.",
     "The past cannot be changed. The future is yet in your power.",
-    "One way to keep momentum going is to have constaly greater goals.",
+    "One way to keep momentum going is to have constantly greater goals.",
     "Do your work with your whole heart, and you will succeed - there's so little competition.",
     "A goal is a dream with a deadline.",
     "Expect problems and eat them for breakfast.",
