@@ -8,7 +8,8 @@
 body {
     max-width: 1400px;
     margin: auto;
-    background-color: rgb(40, 50, 64);
+    background: rgb(15, 44, 64);
+    background: linear-gradient(90deg, rgba(15, 44, 64, 1) 0%, rgba(40, 50, 64, 1) 64%, rgba(11, 77, 89, 1) 100%);
     color: white;
 }
 
@@ -70,13 +71,21 @@ li {
     max-width: 100%;
     border-radius: 8px;
     border: 1px solid black;
+    float: right;
 }
 
-.main-flex,
+.main-flex {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    margin-top: 5rem;
+    padding: 0 4rem;
+}
+
 .section2-flex {
     display: flex;
-    justify-content: space-between;
-    gap: 3rem;
+    justify-content: space-evenly;
+    gap: 2rem;
     margin-top: 5rem;
 }
 
@@ -89,14 +98,14 @@ p {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+
 }
 
 .main-p-wrap p:first-child {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 600;
     color: white;
-    width: 70%;
+    width: 80%;
 }
 
 .section-container p:first-child {
@@ -107,6 +116,8 @@ p {
 
 .main-p-wrap p:nth-child(2) {
     font-size: 1.1rem;
+    width: 100%;
+    margin-top: 1.2rem;
 }
 
 .button {
@@ -124,18 +135,18 @@ p {
     font-weight: 500;
     background: rgb(52, 68, 92);
     transition: .3s ease-in-out;
-    border-top: 1px solid white;
+    border: 2px solid white;
 }
 
 .button-flex {
     display: flex;
     flex-direction: row;
     gap: 1.2rem;
-    margin-top: 4rem;
+    margin-top: 3.5rem;
 }
 
 .section-container {
-    border: 2px solid white;
+    border: 2px solid #FFD6BA;
     border-radius: 8px;
     margin-top: 6rem;
     padding: 3rem;
@@ -178,23 +189,112 @@ p {
 }
 
 .section2-container {
-    margin: 3rem 0 5rem;
+    margin: 2rem 0 5rem;
     padding-top: 1rem;
 }
 
 .section2-p-wrap {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .section2-p-wrap p:first-child {
     color: white;
     font-size: 2.5rem;
     font-weight: 600;
-    text-align: right;
 }
 
 .section2-p-wrap p:nth-child(2) {
-    text-align: right;
     font-size: 1.1rem;
     margin-top: 1.5rem;
+    width: 80%;
+    text-align: right;
+}
+
+.footer-container {
+    margin-top: 20rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #FFD6BA;
+    padding-top: 2rem;
+}
+
+.footer-left {
+    display: flex;
+    gap: 2rem;
+}
+
+.company,
+.contact,
+.social {
+    display: flex;
+    flex-direction: column;
+}
+
+.company p:first-child,
+.contact p:first-child,
+.social p:first-child {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-p {
+    font-family: "Titillium Web", sans-serif;
+    color: #FFD6BA;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .5rem;
+}
+
+.footer-right p {
+    font-weight: 600;
+}
+
+
+.error-msg {
+    color: red;
+    display: flex;
+    justify-content: center;
+    margin-top: 30rem;
+}
+
+
+.section3 {
+    border: 2px solid #FFD6BA;
+    border-radius: 8px;
+    padding: 4rem;
+    margin-top: 8rem;
+    background: rgb(36, 37, 47);
+}
+
+.section3-p {
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.section3-flex {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    gap: 1.5rem;
+}
+
+.section3-input {
+    width: 500px;
+    border-radius: 8px;
+    padding-left: 1rem;
+    font-family: "Chakra Petch", sans-serif;
+    letter-spacing: 1px;
 }
